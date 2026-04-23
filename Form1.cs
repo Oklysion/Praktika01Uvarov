@@ -589,6 +589,8 @@ JOIN Invited_participants ON Inviting_participants.fk_Code_player = Invited_part
         {
             InitializeComponent();
 
+            ContextFilter.Is_EnableOrVisible = true;
+
             string configPath = Path.Combine(Application.StartupPath, "config.ini");
 
             string[] lines = File.ReadAllLines(configPath);
