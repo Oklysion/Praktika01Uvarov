@@ -130,6 +130,13 @@ namespace Praktika01Uvarov
             }
         }
 
+        private bool Check()
+        {
+            sqlCommand = $"SELECT COUNT(*) FROM Users WHERE username = '{txtLLogin.Text}';";
+            cmd = new(sqlCommand, conn);
+            return Convert.ToBoolean(cmd.ExecuteScalar());
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -142,11 +149,17 @@ namespace Praktika01Uvarov
                 {
                     if (txtLLogin.Text != "SSSR")
                     {
+                        if(Convert.ToInt32(Check()) == 1)
+                        {
+                            MessageBox.Show($"Пользователь {txtLLogin.Text}");
+                        }
+                        if(Convert.ToInt32(Check()) == 0) { 
                         sqlCommand = $"INSERT INTO Users (fullName, username, PASSWORD, role_FK) VALUES ('{txtFIO.Text}', '{txtLLogin.Text}', SHA2(@pass, 512), {RoleCombBox.SelectedValue.ToString()});";
                         cmd = new(sqlCommand, conn);
                         cmd.Parameters.AddWithValue("@pass", txtPas.Text.Trim().ToString());
                         cmd.ExecuteNonQuery();
                         fillTable();
+                        }
                     }
                     else
                     {
