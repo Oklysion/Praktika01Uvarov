@@ -1,6 +1,5 @@
 using ArchiveFund;
 using MySql.Data.MySqlClient;
-using System.Reflection.Metadata.Ecma335;
 using System.Text;
 
 namespace Praktika01Uvarov
@@ -295,6 +294,7 @@ JOIN Educational_work_plan ON Educational_work_plan.Number_plan = `Event`.fk_Num
                         int idNumberPlan = Convert.ToInt32(dataGridView1.Rows[indRow].Cells[0].Value);
                         if (dataGridView2.RowCount != 0 || dataGridView4.RowCount != 0)
                         {
+                            // цикл дописать
                             int idNumberPlanEvent = Convert.ToInt32(dataGridView2.Rows[indRow].Cells["EventIDNumber"].Value);
                             sqlCommand = $"DELETE FROM `event` WHERE fk_Number_plan = {idNumberPlanEvent.ToString()};";
                             cmd = new(sqlCommand, conn);
@@ -612,6 +612,20 @@ JOIN Invited_participants ON Inviting_participants.fk_Code_player = Invited_part
                 conn.Open();
                 fullNameUSER.Text = OName;
 
+                if(dataGridView1.RowCount == 0 || dataGridView2.RowCount == 0 || dataGridView3.RowCount == 0 || dataGridView4.RowCount == 0)
+                {
+                    AddEditDelete.Items[1].Visible = false;
+                    AddEditDelete.Items[2].Visible = false;
+                    AddEditDelete.Items[3].Visible = false;
+                    AddEditDelete.Items[5].Visible = false;
+                }
+                else
+                {
+                    AddEditDelete.Items[1].Visible = true;
+                    AddEditDelete.Items[2].Visible = true;
+                    AddEditDelete.Items[3].Visible = true;
+                    AddEditDelete.Items[5].Visible = true;
+                }
                 Instance = this;
 
                 System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer { Interval = 1000 };
@@ -629,7 +643,7 @@ JOIN Invited_participants ON Inviting_participants.fk_Code_player = Invited_part
                 {
                     администрированиеToolStripMenuItem.Visible = true;
                 }
-               
+
             }
             catch
             {
@@ -1023,7 +1037,7 @@ ORDER BY E.Number_plan DESC;
             cmd = new MySqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@Search", search);
 
-             rdr = cmd.ExecuteReader();
+            rdr = cmd.ExecuteReader();
 
             dataGridView1.Rows.Clear();
 
@@ -1177,12 +1191,10 @@ ORDER BY t.Code_player DESC;";
             if (tabControl1.SelectedIndex == 0)
             {
                 SearchVospPlan();
-                txtSearch.PlaceholderText = "Поиск... Например: Экологическое, 2025, ...";
             }
             if (tabControl1.SelectedIndex == 1)
             {
                 SearchEvent();
-                txtSearch.PlaceholderText = "Поиск... Например: Экологическое, 2025, ...";
             }
             if (tabControl1.SelectedIndex == 2)
             {
@@ -1296,15 +1308,26 @@ ORDER BY t.Code_player DESC;";
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            string htmlContent = GenerateHTMLReport();
-            string filePath = @"Report.html"; // Укажите путь к файлу
-
-            using (StreamWriter writer = new StreamWriter(filePath, false, Encoding.UTF8))
+            try
             {
-                writer.Write(htmlContent);
-            }
+                string htmlContent = GenerateHTMLReport();
+                saveFileDialog1.Filter = "Html Files (*.html) | *.html";
+                saveFileDialog1.ShowDialog();
+                string filePath = saveFileDialog1.FileName;
+                if (!string.IsNullOrEmpty(filePath))
+                {
+                    System.IO.File.WriteAllText(filePath, htmlContent);
+                    if (htmlContent == System.IO.File.ReadAllText(filePath))
+                    {
+                        MessageBox.Show("Отчёт сохранён в " + Path.GetFileName(filePath));
+                    }
+                }
+                else
+                {
 
-            MessageBox.Show("Отчёт сохранён в " + filePath);
+                }
+            }
+            catch { }
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)

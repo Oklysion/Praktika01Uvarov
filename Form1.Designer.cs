@@ -112,6 +112,7 @@
             fullNameUSER = new ToolStripLabel();
             toolStripSeparator3 = new ToolStripSeparator();
             DateTS = new ToolStripLabel();
+            saveFileDialog1 = new SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             AddEditDelete.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -1147,5 +1148,6 @@
         private DataGridViewTextBoxColumn Срокипроведения;
         private DataGridViewTextBoxColumn Ответственный;
         private DataGridViewTextBoxColumn Учебныйгод;
+        private SaveFileDialog saveFileDialog1;
     }
 }

@@ -1,16 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
-using System.Security.Cryptography;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.SqlTypes;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Praktika01Uvarov
 {
@@ -225,7 +214,7 @@ Password=";
                     }
                     else
                     {
-                        Form1 form = new Form1(Z,O);
+                        Form1 form = new Form1(Z, O);
                         this.Hide();
                         form.Show();
                         conn.Close();

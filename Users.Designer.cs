@@ -32,18 +32,18 @@
             id_user = new DataGridViewTextBoxColumn();
             DTLogin = new DataGridViewTextBoxColumn();
             RoleUser = new DataGridViewTextBoxColumn();
-            txtLogin = new Label();
-            txtPassw = new Label();
-            txtRole = new Label();
+            labelLogin = new Label();
+            labelPass = new Label();
+            labelRole = new Label();
             RoleCombBox = new ComboBox();
             txtPas = new TextBox();
             txtLLogin = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
-            label4 = new Label();
+            btnSave = new Button();
+            btnDelete = new Button();
+            labelFIO = new Label();
             txtFIO = new TextBox();
-            button3 = new Button();
-            button4 = new Button();
+            btnReserv = new Button();
+            btnVostan = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -82,35 +82,35 @@
             RoleUser.Name = "RoleUser";
             RoleUser.ReadOnly = true;
             // 
-            // txtLogin
+            // labelLogin
             // 
-            txtLogin.AutoSize = true;
-            txtLogin.Font = new Font("Segoe UI", 9.75F);
-            txtLogin.Location = new Point(265, 54);
-            txtLogin.Name = "txtLogin";
-            txtLogin.Size = new Size(44, 17);
-            txtLogin.TabIndex = 1;
-            txtLogin.Text = "Логин";
+            labelLogin.AutoSize = true;
+            labelLogin.Font = new Font("Segoe UI", 9.75F);
+            labelLogin.Location = new Point(265, 54);
+            labelLogin.Name = "labelLogin";
+            labelLogin.Size = new Size(44, 17);
+            labelLogin.TabIndex = 1;
+            labelLogin.Text = "Логин";
             // 
-            // txtPassw
+            // labelPass
             // 
-            txtPassw.AutoSize = true;
-            txtPassw.Font = new Font("Segoe UI", 9.75F);
-            txtPassw.Location = new Point(265, 97);
-            txtPassw.Name = "txtPassw";
-            txtPassw.Size = new Size(54, 17);
-            txtPassw.TabIndex = 2;
-            txtPassw.Text = "Пароль";
+            labelPass.AutoSize = true;
+            labelPass.Font = new Font("Segoe UI", 9.75F);
+            labelPass.Location = new Point(265, 97);
+            labelPass.Name = "labelPass";
+            labelPass.Size = new Size(54, 17);
+            labelPass.TabIndex = 2;
+            labelPass.Text = "Пароль";
             // 
-            // txtRole
+            // labelRole
             // 
-            txtRole.AutoSize = true;
-            txtRole.Font = new Font("Segoe UI", 9.75F);
-            txtRole.Location = new Point(265, 140);
-            txtRole.Name = "txtRole";
-            txtRole.Size = new Size(37, 17);
-            txtRole.TabIndex = 3;
-            txtRole.Text = "Роль";
+            labelRole.AutoSize = true;
+            labelRole.Font = new Font("Segoe UI", 9.75F);
+            labelRole.Location = new Point(265, 140);
+            labelRole.Name = "labelRole";
+            labelRole.Size = new Size(37, 17);
+            labelRole.TabIndex = 3;
+            labelRole.Text = "Роль";
             // 
             // RoleCombBox
             // 
@@ -139,37 +139,37 @@
             txtLLogin.TabIndex = 6;
             txtLLogin.KeyPress += txtLLogin_KeyPress;
             // 
-            // button1
+            // btnSave
             // 
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(265, 288);
-            button1.Name = "button1";
-            button1.Size = new Size(156, 29);
-            button1.TabIndex = 7;
-            button1.Text = "Сохранить изменения";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Location = new Point(265, 288);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(156, 29);
+            btnSave.TabIndex = 7;
+            btnSave.Text = "Сохранить изменения";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += button1_Click;
             // 
-            // button2
+            // btnDelete
             // 
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(430, 288);
-            button2.Name = "button2";
-            button2.Size = new Size(156, 29);
-            button2.TabIndex = 8;
-            button2.Text = "Удалить пользователя";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.Location = new Point(430, 288);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(156, 29);
+            btnDelete.TabIndex = 8;
+            btnDelete.Text = "Удалить пользователя";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += button2_Click;
             // 
-            // label4
+            // labelFIO
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label4.Location = new Point(265, 13);
-            label4.Name = "label4";
-            label4.Size = new Size(37, 17);
-            label4.TabIndex = 9;
-            label4.Text = "ФИО";
+            labelFIO.AutoSize = true;
+            labelFIO.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            labelFIO.Location = new Point(265, 13);
+            labelFIO.Name = "labelFIO";
+            labelFIO.Size = new Size(37, 17);
+            labelFIO.TabIndex = 9;
+            labelFIO.Text = "ФИО";
             // 
             // txtFIO
             // 
@@ -180,45 +180,45 @@
             txtFIO.TabIndex = 10;
             txtFIO.KeyPress += txtFIO_KeyPress;
             // 
-            // button3
+            // btnReserv
             // 
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Location = new Point(430, 183);
-            button3.Name = "button3";
-            button3.Size = new Size(113, 76);
-            button3.TabIndex = 11;
-            button3.Text = "Резервоне копирование";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            btnReserv.FlatStyle = FlatStyle.Flat;
+            btnReserv.Location = new Point(430, 183);
+            btnReserv.Name = "btnReserv";
+            btnReserv.Size = new Size(113, 76);
+            btnReserv.TabIndex = 11;
+            btnReserv.Text = "Резервоне копирование";
+            btnReserv.UseVisualStyleBackColor = true;
+            btnReserv.Click += button3_Click;
             // 
-            // button4
+            // btnVostan
             // 
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Location = new Point(308, 183);
-            button4.Name = "button4";
-            button4.Size = new Size(113, 76);
-            button4.TabIndex = 12;
-            button4.Text = "Восстановление ";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            btnVostan.FlatStyle = FlatStyle.Flat;
+            btnVostan.Location = new Point(308, 183);
+            btnVostan.Name = "btnVostan";
+            btnVostan.Size = new Size(113, 76);
+            btnVostan.TabIndex = 12;
+            btnVostan.Text = "Восстановление ";
+            btnVostan.UseVisualStyleBackColor = true;
+            btnVostan.Click += button4_Click;
             // 
             // Users
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(598, 337);
-            Controls.Add(button4);
-            Controls.Add(button3);
+            Controls.Add(btnVostan);
+            Controls.Add(btnReserv);
             Controls.Add(txtFIO);
-            Controls.Add(label4);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(labelFIO);
+            Controls.Add(btnDelete);
+            Controls.Add(btnSave);
             Controls.Add(txtLLogin);
             Controls.Add(txtPas);
             Controls.Add(RoleCombBox);
-            Controls.Add(txtRole);
-            Controls.Add(txtPassw);
-            Controls.Add(txtLogin);
+            Controls.Add(labelRole);
+            Controls.Add(labelPass);
+            Controls.Add(labelLogin);
             Controls.Add(dataGridView1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "Users";
@@ -233,20 +233,20 @@
         #endregion
 
         private DataGridView dataGridView1;
-        private Label txtLogin;
-        private Label txtPassw;
-        private Label txtRole;
+        private Label labelLogin;
+        private Label labelPass;
+        private Label labelRole;
         private ComboBox RoleCombBox;
         private TextBox txtPas;
         private TextBox txtLLogin;
-        private Button button1;
-        private Button button2;
-        private Label label4;
+        private Button btnSave;
+        private Button btnDelete;
+        private Label labelFIO;
         private TextBox txtFIO;
         private DataGridViewTextBoxColumn id_user;
         private DataGridViewTextBoxColumn DTLogin;
         private DataGridViewTextBoxColumn RoleUser;
-        private Button button3;
-        private Button button4;
+        private Button btnReserv;
+        private Button btnVostan;
     }
 }

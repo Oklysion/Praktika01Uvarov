@@ -33,7 +33,7 @@
             txtPass = new TextBox();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
-            button1 = new Button();
+            btAuth = new Button();
             pictureBox3 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -77,18 +77,18 @@
             pictureBox2.TabIndex = 4;
             pictureBox2.TabStop = false;
             // 
-            // button1
+            // btAuth
             // 
-            button1.BackColor = Color.White;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button1.Location = new Point(12, 118);
-            button1.Name = "button1";
-            button1.Size = new Size(289, 44);
-            button1.TabIndex = 5;
-            button1.Text = "Войти";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btAuth.BackColor = Color.White;
+            btAuth.FlatStyle = FlatStyle.Flat;
+            btAuth.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            btAuth.Location = new Point(12, 118);
+            btAuth.Name = "btAuth";
+            btAuth.Size = new Size(289, 44);
+            btAuth.TabIndex = 5;
+            btAuth.Text = "Войти";
+            btAuth.UseVisualStyleBackColor = false;
+            btAuth.Click += button1_Click;
             // 
             // pictureBox3
             // 
@@ -109,7 +109,7 @@
             BackColor = Color.White;
             ClientSize = new Size(313, 174);
             Controls.Add(pictureBox3);
-            Controls.Add(button1);
+            Controls.Add(btAuth);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(txtPass);
@@ -133,7 +133,7 @@
         private TextBox txtPass;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
-        private Button button1;
+        private Button btAuth;
         private PictureBox pictureBox3;
     }
 }
