@@ -238,6 +238,18 @@ ALTER TABLE `Users`
   ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`role_FK`) REFERENCES `roles` (`id_role`);
 COMMIT;
 
+ALTER TABLE `inviting_participants` 
+ADD CONSTRAINT `inviting_participants` 
+FOREIGN KEY (`fk_Number_plan`) 
+REFERENCES `educational_work_plan` (`Number_plan`) 
+ON DELETE CASCADE;
+
+ALTER TABLE `inviting_participants` 
+ADD CONSTRAINT `inviting_participants_code_player` 
+FOREIGN KEY (`fk_Code_player`) 
+REFERENCES `Invited_participants` (`Code_player`) 
+ON DELETE CASCADE;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

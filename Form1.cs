@@ -292,31 +292,31 @@ JOIN Educational_work_plan ON Educational_work_plan.Number_plan = `Event`.fk_Num
                         InfoInvited();
                         int indRow = dataGridView1.CurrentRow.Index;
                         int idNumberPlan = Convert.ToInt32(dataGridView1.Rows[indRow].Cells[0].Value);
-                        if (dataGridView2.RowCount != 0 || dataGridView4.RowCount != 0)
+                        if (dataGridView2.RowCount != 0 && indRow < dataGridView2.Rows.Count)
                         {
-                            // цикл дописать
                             int idNumberPlanEvent = Convert.ToInt32(dataGridView2.Rows[indRow].Cells["EventIDNumber"].Value);
                             sqlCommand = $"DELETE FROM `event` WHERE fk_Number_plan = {idNumberPlanEvent.ToString()};";
                             cmd = new(sqlCommand, conn);
                             cmd.ExecuteNonQuery();
                             fillTable2();
+                        }
+                        if (dataGridView4.RowCount != 0 && indRow < dataGridView4.RowCount)
+                        {
                             sqlCommand = $"DELETE FROM `inviting_participants` WHERE fk_Number_plan = {idNumberPlan.ToString()};";
                             cmd = new(sqlCommand, conn);
                             cmd.ExecuteNonQuery();
-                            sqlCommand = $"DELETE FROM Educational_work_plan WHERE Number_plan = {idNumberPlan.ToString()}";
+                            int idPlayer = Convert.ToInt32(dataGridView4.Rows[indRow].Cells[1].Value);
+                            sqlCommand = $"DELETE FROM Invited_participants WHERE Code_player = '{idPlayer.ToString()}';";
                             cmd = new(sqlCommand, conn);
                             cmd.ExecuteNonQuery();
-                            fillTable();
+                            fillTable4();
                         }
-                        else
-                        {
-                            sqlCommand = $"DELETE FROM Educational_work_plan WHERE Number_plan = {idNumberPlan.ToString()}";
-                            cmd = new(sqlCommand, conn);
-                            cmd.ExecuteNonQuery();
-                            fillTable();
-                        }
+                        sqlCommand = $"DELETE FROM Educational_work_plan WHERE Number_plan = {idNumberPlan.ToString()}";
+                        cmd = new(sqlCommand, conn);
+                        cmd.ExecuteNonQuery();
                     }
                 }
+                fillTable();
             }
             catch (Exception ex)
             {
@@ -612,20 +612,6 @@ JOIN Invited_participants ON Inviting_participants.fk_Code_player = Invited_part
                 conn.Open();
                 fullNameUSER.Text = OName;
 
-                if(dataGridView1.RowCount == 0 || dataGridView2.RowCount == 0 || dataGridView3.RowCount == 0 || dataGridView4.RowCount == 0)
-                {
-                    AddEditDelete.Items[1].Visible = false;
-                    AddEditDelete.Items[2].Visible = false;
-                    AddEditDelete.Items[3].Visible = false;
-                    AddEditDelete.Items[5].Visible = false;
-                }
-                else
-                {
-                    AddEditDelete.Items[1].Visible = true;
-                    AddEditDelete.Items[2].Visible = true;
-                    AddEditDelete.Items[3].Visible = true;
-                    AddEditDelete.Items[5].Visible = true;
-                }
                 Instance = this;
 
                 System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer { Interval = 1000 };
