@@ -148,8 +148,7 @@
             // 
             // dtTashkent
             // 
-            dtTashkent.CustomFormat = "yyyy";
-            dtTashkent.Format = DateTimePickerFormat.Custom;
+            dtTashkent.CustomFormat = "";
             dtTashkent.Location = new Point(12, 289);
             dtTashkent.Name = "dtTashkent";
             dtTashkent.Size = new Size(330, 23);

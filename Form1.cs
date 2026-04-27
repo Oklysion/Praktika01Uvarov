@@ -48,7 +48,7 @@ JOIN Educational_work_plan ON Educational_work_plan.Number_plan = `Event`.fk_Num
                     else
                     {
                         sqlCommand = @"START TRANSACTION; INSERT INTO Educational_work_plan (The_direction_of_educational_work, Educational_work_plan.`EVENT`, Dates_event, FIO_responsible_person, A_note_about_the_event)
-                VALUES ('" + thisPlanVospitat.txtNaprav.Text + "', '" + thisPlanVospitat.txtNazvan.Text + "', '" + thisPlanVospitat.txtSroki.Text + "', '" + thisPlanVospitat.txtFIOOtvet.Text + "', '" + thisPlanVospitat.dtTashkent.Value.ToString("yyyy") + "'); COMMIT;";
+                VALUES ('" + thisPlanVospitat.txtNaprav.Text + "', '" + thisPlanVospitat.txtNazvan.Text + "', '" + thisPlanVospitat.txtSroki.Text + "', '" + thisPlanVospitat.txtFIOOtvet.Text + "', '" + thisPlanVospitat.dtTashkent.Value.ToString("yyyy-MM-dd") + "'); COMMIT;";
                         cmd = new MySqlCommand(sqlCommand, conn);
                         cmd.ExecuteNonQuery();
                         fillTable();
@@ -263,7 +263,7 @@ JOIN Educational_work_plan ON Educational_work_plan.Number_plan = `Event`.fk_Num
                     n3 = thisPlanVospitat.txtSroki.Text;
                     n4 = thisPlanVospitat.txtFIOOtvet.Text;
                     sqlCommand = "UPDATE Educational_work_plan SET ";
-                    sqlCommand += "The_direction_of_educational_work = '" + n1 + "', EVENT = '" + n2 + "', Dates_event = '" + n3 + "', FIO_responsible_person = '" + n4 + "', A_note_about_the_event = '" + thisPlanVospitat.dtTashkent.Value.ToString("yyyy") + "'";
+                    sqlCommand += "The_direction_of_educational_work = '" + n1 + "', EVENT = '" + n2 + "', Dates_event = '" + n3 + "', FIO_responsible_person = '" + n4 + "', A_note_about_the_event = '" + thisPlanVospitat.dtTashkent.Value.ToString("yyyy-MM-dd") + "'";
                     sqlCommand += " WHERE Number_plan = " + idStud.ToString() + ";";
                     cmd = new MySqlCommand(sqlCommand, conn);
                     cmd.ExecuteNonQuery();
@@ -917,7 +917,8 @@ JOIN Invited_participants ON Inviting_participants.fk_Code_player = Invited_part
 
         private void button1_Click(object sender, EventArgs e)
         {
-            sqlCommand = "SELECT Number_plan, The_direction_of_educational_work AS 'Направление', Event AS 'Название', Dates_event AS 'Сроки проведения', FIO_responsible_person AS 'Ответственный', A_note_about_the_event AS 'Дата проведения' FROM Educational_work_plan";
+            string s = "A_note_about_the_event";
+            sqlCommand = $"SELECT Number_plan, The_direction_of_educational_work AS 'Направление', Event AS 'Название', Dates_event AS 'Сроки проведения', FIO_responsible_person AS 'Ответственный', A_note_about_the_event AS 'Дата проведения' FROM Educational_work_plan";
             cmd = new MySqlCommand(sqlCommand, conn);
             cmd.ExecuteNonQuery();
             fillTable();

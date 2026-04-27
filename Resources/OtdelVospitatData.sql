@@ -35,7 +35,7 @@ CREATE TABLE `Educational_work_plan` (
   `EVENT` varchar(40) CHARACTER SET utf8mb3 NOT NULL,
   `Dates_event` varchar(100) CHARACTER SET utf8mb3 DEFAULT NULL,
   `FIO_responsible_person` varchar(50) CHARACTER SET utf8mb3 NOT NULL,
-  `A_note_about_the_event` year DEFAULT NULL
+  `A_note_about_the_event` DATETIME DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=armscii8 COLLATE=armscii8_bin;
 
 --
@@ -43,9 +43,9 @@ CREATE TABLE `Educational_work_plan` (
 --
 
 INSERT INTO `Educational_work_plan` (`Number_plan`, `The_direction_of_educational_work`, `EVENT`, `Dates_event`, `FIO_responsible_person`, `A_note_about_the_event`) VALUES
-(1, 'Патриотическое воспитание', 'Патриотизм в массы', '10.02.2024 по 23.03.2025', 'Федусева Элла Юрьевна', '2025'),
-(2, 'Трудовое воспитание', 'Труд и ещё раз труд!', '11.12.2025 по 13.01.2026', 'Федусева Элла Юрьевна', '2026'),
-(3, 'Экологическое воспитание', 'Чистая планета', '13.02.2026 по 25.03.2026', 'Федусева Элла Юрьевна', '2023');
+(1, 'Патриотическое воспитание', 'Патриотизм в массы', 'сентябрь', 'Федусева Элла Юрьевна', '2025-10-09'),
+(2, 'Трудовое воспитание', 'Труд и ещё раз труд!', 'октябрь', 'Федусева Элла Юрьевна', '2026-12-05'),
+(3, 'Экологическое воспитание', 'Чистая планета', 'ноябрь', 'Федусева Элла Юрьевна', '2023-09-02');
 
 -- --------------------------------------------------------
 
