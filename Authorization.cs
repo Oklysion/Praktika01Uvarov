@@ -214,7 +214,7 @@ Password=";
                     }
                     else
                     {
-                        Form1 form = new Form1(Z, O);
+                        Form1 form = new(Z, O);
                         this.Hide();
                         form.Show();
                         conn.Close();

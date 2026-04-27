@@ -107,14 +107,14 @@
             toolStripMenuItem1 = new ToolStripMenuItem();
             администрированиеToolStripMenuItem = new ToolStripMenuItem();
             оПрограммеToolStripMenuItem = new ToolStripMenuItem();
+            spravochnik = new ToolStripMenuItem();
+            spravka = new ToolStripMenuItem();
             FIODayn = new Label();
             toolStrip1 = new ToolStrip();
             fullNameUSER = new ToolStripLabel();
             toolStripSeparator3 = new ToolStripSeparator();
             DateTS = new ToolStripLabel();
             saveFileDialog1 = new SaveFileDialog();
-            spravochnik = new ToolStripMenuItem();
-            spravka = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             AddEditDelete.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -920,6 +920,7 @@
             // 
             // GLMenu
             // 
+            GLMenu.BackColor = Color.Transparent;
             GLMenu.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
             GLMenu.Items.AddRange(new ToolStripItem[] { UchetZapis, toolStripMenuItem1, администрированиеToolStripMenuItem, оПрограммеToolStripMenuItem });
             GLMenu.Location = new Point(0, 0);
@@ -973,6 +974,21 @@
             оПрограммеToolStripMenuItem.Size = new Size(118, 21);
             оПрограммеToolStripMenuItem.Text = "О программе";
             // 
+            // spravochnik
+            // 
+            spravochnik.Image = Properties.Resources.free_icon_book_11553448;
+            spravochnik.Name = "spravochnik";
+            spravochnik.Size = new Size(180, 22);
+            spravochnik.Text = "Справочник";
+            spravochnik.Click += toolStripMenuItem2_Click;
+            // 
+            // spravka
+            // 
+            spravka.Image = Properties.Resources.free_icon_income_statement_8870291;
+            spravka.Name = "spravka";
+            spravka.Size = new Size(180, 22);
+            spravka.Text = "Справка";
+            // 
             // FIODayn
             // 
             FIODayn.AutoSize = true;
@@ -1014,21 +1030,6 @@
             DateTS.Name = "DateTS";
             DateTS.RightToLeft = RightToLeft.No;
             DateTS.Size = new Size(0, 22);
-            // 
-            // spravochnik
-            // 
-            spravochnik.Image = Properties.Resources.free_icon_book_11553448;
-            spravochnik.Name = "spravochnik";
-            spravochnik.Size = new Size(180, 22);
-            spravochnik.Text = "Справочник";
-            spravochnik.Click += toolStripMenuItem2_Click;
-            // 
-            // spravka
-            // 
-            spravka.Image = Properties.Resources.free_icon_income_statement_8870291;
-            spravka.Name = "spravka";
-            spravka.Size = new Size(180, 22);
-            spravka.Text = "Справка";
             // 
             // Form1
             // 

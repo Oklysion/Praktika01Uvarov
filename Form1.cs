@@ -917,7 +917,6 @@ JOIN Invited_participants ON Inviting_participants.fk_Code_player = Invited_part
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string s = "A_note_about_the_event";
             sqlCommand = $"SELECT Number_plan, The_direction_of_educational_work AS 'Направление', Event AS 'Название', Dates_event AS 'Сроки проведения', FIO_responsible_person AS 'Ответственный', A_note_about_the_event AS 'Дата проведения' FROM Educational_work_plan";
             cmd = new MySqlCommand(sqlCommand, conn);
             cmd.ExecuteNonQuery();
