@@ -31,6 +31,12 @@
             components = new System.ComponentModel.Container();
             txtSearch = new TextBox();
             dataGridView1 = new DataGridView();
+            IDNumber = new DataGridViewTextBoxColumn();
+            Направление = new DataGridViewTextBoxColumn();
+            Название = new DataGridViewTextBoxColumn();
+            Срокипроведения = new DataGridViewTextBoxColumn();
+            Ответственный = new DataGridViewTextBoxColumn();
+            Учебныйгод = new DataGridViewTextBoxColumn();
             AddEditDelete = new ContextMenuStrip(components);
             AddPlan = new ToolStripMenuItem();
             EditPlan = new ToolStripMenuItem();
@@ -107,12 +113,8 @@
             toolStripSeparator3 = new ToolStripSeparator();
             DateTS = new ToolStripLabel();
             saveFileDialog1 = new SaveFileDialog();
-            IDNumber = new DataGridViewTextBoxColumn();
-            Направление = new DataGridViewTextBoxColumn();
-            Название = new DataGridViewTextBoxColumn();
-            Срокипроведения = new DataGridViewTextBoxColumn();
-            Ответственный = new DataGridViewTextBoxColumn();
-            Учебныйгод = new DataGridViewTextBoxColumn();
+            spravochnik = new ToolStripMenuItem();
+            spravka = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             AddEditDelete.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -167,6 +169,48 @@
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(792, 272);
             dataGridView1.TabIndex = 1;
+            // 
+            // IDNumber
+            // 
+            IDNumber.HeaderText = "Номер п/п";
+            IDNumber.Name = "IDNumber";
+            IDNumber.ReadOnly = true;
+            // 
+            // Направление
+            // 
+            Направление.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Направление.HeaderText = "Направление";
+            Направление.Name = "Направление";
+            Направление.ReadOnly = true;
+            // 
+            // Название
+            // 
+            Название.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Название.HeaderText = "Название";
+            Название.Name = "Название";
+            Название.ReadOnly = true;
+            // 
+            // Срокипроведения
+            // 
+            Срокипроведения.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Срокипроведения.HeaderText = "Сроки проведения";
+            Срокипроведения.Name = "Срокипроведения";
+            Срокипроведения.ReadOnly = true;
+            Срокипроведения.SortMode = DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Ответственный
+            // 
+            Ответственный.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Ответственный.HeaderText = "Ответственный";
+            Ответственный.Name = "Ответственный";
+            Ответственный.ReadOnly = true;
+            // 
+            // Учебныйгод
+            // 
+            Учебныйгод.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Учебныйгод.HeaderText = "Отметка о проведении";
+            Учебныйгод.Name = "Учебныйгод";
+            Учебныйгод.ReadOnly = true;
             // 
             // AddEditDelete
             // 
@@ -922,6 +966,7 @@
             // 
             // оПрограммеToolStripMenuItem
             // 
+            оПрограммеToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { spravochnik, spravka });
             оПрограммеToolStripMenuItem.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
             оПрограммеToolStripMenuItem.Image = Properties.Resources.question_sign_icon_178767;
             оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
@@ -970,47 +1015,20 @@
             DateTS.RightToLeft = RightToLeft.No;
             DateTS.Size = new Size(0, 22);
             // 
-            // IDNumber
+            // spravochnik
             // 
-            IDNumber.HeaderText = "Номер п/п";
-            IDNumber.Name = "IDNumber";
-            IDNumber.ReadOnly = true;
+            spravochnik.Image = Properties.Resources.free_icon_book_11553448;
+            spravochnik.Name = "spravochnik";
+            spravochnik.Size = new Size(180, 22);
+            spravochnik.Text = "Справочник";
+            spravochnik.Click += toolStripMenuItem2_Click;
             // 
-            // Направление
+            // spravka
             // 
-            Направление.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Направление.HeaderText = "Направление";
-            Направление.Name = "Направление";
-            Направление.ReadOnly = true;
-            // 
-            // Название
-            // 
-            Название.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Название.HeaderText = "Название";
-            Название.Name = "Название";
-            Название.ReadOnly = true;
-            // 
-            // Срокипроведения
-            // 
-            Срокипроведения.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Срокипроведения.HeaderText = "Сроки проведения";
-            Срокипроведения.Name = "Срокипроведения";
-            Срокипроведения.ReadOnly = true;
-            Срокипроведения.SortMode = DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Ответственный
-            // 
-            Ответственный.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Ответственный.HeaderText = "Ответственный";
-            Ответственный.Name = "Ответственный";
-            Ответственный.ReadOnly = true;
-            // 
-            // Учебныйгод
-            // 
-            Учебныйгод.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Учебныйгод.HeaderText = "Отметка о проведении";
-            Учебныйгод.Name = "Учебныйгод";
-            Учебныйгод.ReadOnly = true;
+            spravka.Image = Properties.Resources.free_icon_income_statement_8870291;
+            spravka.Name = "spravka";
+            spravka.Size = new Size(180, 22);
+            spravka.Text = "Справка";
             // 
             // Form1
             // 
@@ -1149,5 +1167,7 @@
         private DataGridViewTextBoxColumn Срокипроведения;
         private DataGridViewTextBoxColumn Ответственный;
         private DataGridViewTextBoxColumn Учебныйгод;
+        private ToolStripMenuItem spravochnik;
+        private ToolStripMenuItem spravka;
     }
 }

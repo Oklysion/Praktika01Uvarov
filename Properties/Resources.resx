@@ -130,6 +130,9 @@
   <data name="waste_bin_delete_remove_recycle_icon_123840" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\net8.0-windows\waste_bin_delete_remove_recycle_icon_123840.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1490129329-rounded38_822031" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\net8.0-windows\1490129329-rounded38_82203.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="xaxaxa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\xaxaxa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,11 +145,11 @@
   <data name="masculine-avatar-user-with-suit_icon-icons.com_68296" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\net8.0-windows\masculine-avatar-user-with-suit_icon-icons.com_68296.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="free-icon-book-11553448" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-book-11553448.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="circle_customer_help_info_information_service_support_icon_123208" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\net8.0-windows\circle_customer_help_info_information_service_support_icon_123208.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ShowOKO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\net8.0-windows\ShowOKO.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ZakritoOKO1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\net8.0-windows\ZakritoOKO.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,11 +157,14 @@
   <data name="reporting_noun_report_document_file_icon_148360" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\net8.0-windows\reporting_noun_report_document_file_icon_148360.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1490129329-rounded38_822031" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\net8.0-windows\1490129329-rounded38_82203.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ShowOKO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\net8.0-windows\ShowOKO.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1904677-add-addition-calculate-charge-create-new-plus_122527" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\net8.0-windows\1904677-add-addition-calculate-charge-create-new-plus_122527.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="free-icon-filter-2676824" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\net8.0-windows\free-icon-filter-2676824.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1490129329-rounded38_82203" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\net8.0-windows\1490129329-rounded38_82203.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,7 +175,7 @@
   <data name="sign-out-option_icon-icons.com_73413" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\net8.0-windows\sign-out-option_icon-icons.com_73413.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="free-icon-filter-2676824" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\net8.0-windows\free-icon-filter-2676824.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="free-icon-income-statement-8870291" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-income-statement-8870291.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

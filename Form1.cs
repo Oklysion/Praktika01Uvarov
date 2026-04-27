@@ -1328,5 +1328,10 @@ ORDER BY t.Code_player DESC;";
         {
             DeleteEvent();
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

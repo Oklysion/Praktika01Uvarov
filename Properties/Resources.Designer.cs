@@ -113,6 +113,16 @@ namespace Praktika01Uvarov.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap free_icon_book_11553448 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-book-11553448", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap free_icon_developer_2572734 {
             get {
                 object obj = ResourceManager.GetObject("free-icon-developer-2572734", resourceCulture);
@@ -126,6 +136,16 @@ namespace Praktika01Uvarov.Properties {
         internal static System.Drawing.Bitmap free_icon_filter_2676824 {
             get {
                 object obj = ResourceManager.GetObject("free-icon-filter-2676824", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_income_statement_8870291 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-income-statement-8870291", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
