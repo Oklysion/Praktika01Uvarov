@@ -15,6 +15,7 @@ namespace Praktika01Uvarov
         public ThisPlanVospitat()
         {
             InitializeComponent();
+            dtTashkent.Enabled = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -44,6 +45,18 @@ namespace Praktika01Uvarov
         private void ThisPlanVospitat_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == false)
+            {
+                dtTashkent.Enabled = false;
+            }
+            else
+            {
+                dtTashkent.Enabled = true;
+            }
         }
     }
 }

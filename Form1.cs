@@ -46,16 +46,26 @@ JOIN Educational_work_plan ON Educational_work_plan.Number_plan = `Event`.fk_Num
                         AddVospPlan();
                     }
                     else
-                    {
-                        sqlCommand = @"START TRANSACTION; INSERT INTO Educational_work_plan (The_direction_of_educational_work, Educational_work_plan.`EVENT`, Dates_event, FIO_responsible_person, A_note_about_the_event)
+                        {
+                        if (thisPlanVospitat.checkBox1.Checked == false)
+                        {
+                            sqlCommand = @"START TRANSACTION; INSERT INTO Educational_work_plan (The_direction_of_educational_work, Educational_work_plan.`EVENT`, Dates_event, FIO_responsible_person)
+                VALUES ('" + thisPlanVospitat.txtNaprav.Text + "', '" + thisPlanVospitat.txtNazvan.Text + "', '" + thisPlanVospitat.txtSroki.Text + "', '" + thisPlanVospitat.txtFIOOtvet.Text + "'); COMMIT;";
+                            cmd = new MySqlCommand(sqlCommand, conn);
+                            cmd.ExecuteNonQuery();
+                        }
+                        else if (thisPlanVospitat.checkBox1.Checked == true)
+                        {
+                            sqlCommand = @"START TRANSACTION; INSERT INTO Educational_work_plan (The_direction_of_educational_work, Educational_work_plan.`EVENT`, Dates_event, FIO_responsible_person, A_note_about_the_event)
                 VALUES ('" + thisPlanVospitat.txtNaprav.Text + "', '" + thisPlanVospitat.txtNazvan.Text + "', '" + thisPlanVospitat.txtSroki.Text + "', '" + thisPlanVospitat.txtFIOOtvet.Text + "', '" + thisPlanVospitat.dtTashkent.Value.ToString("yyyy-MM-dd") + "'); COMMIT;";
-                        cmd = new MySqlCommand(sqlCommand, conn);
-                        cmd.ExecuteNonQuery();
-                        fillTable();
-                    }
+                            cmd = new MySqlCommand(sqlCommand, conn);
+                            cmd.ExecuteNonQuery();
+                        }
+                      }
+                   }
                 }
-            }
-            catch { }
+            catch (Exception ex){ MessageBox.Show(ex.Message); } 
+            fillTable();
         }
         public void AddEvents()
         {
@@ -75,11 +85,11 @@ JOIN Educational_work_plan ON Educational_work_plan.Number_plan = `Event`.fk_Num
                 VALUES (' " + events.NameCB.SelectedValue + "', '" + events.EventNameCB.SelectedValue + "', '" + events.txtMesto.Text + "', '" + events.txtOsn.Text + "', '" + events.txtKratko.Text + "', '" + events.dtDate.Value.ToString("yyyy-MM-dd") + "'); COMMIT;";
                         cmd = new MySqlCommand(sqlCommand, conn);
                         cmd.ExecuteNonQuery();
-                        fillTable2();
                     }
                 }
             }
             catch { }
+            fillTable2();
         }
         public void AddGroups()
         {
@@ -99,11 +109,11 @@ JOIN Educational_work_plan ON Educational_work_plan.Number_plan = `Event`.fk_Num
                 VALUES ('" + groups.txtFIO.Text + "', '" + groups.txtNameGroup.Text + "'); COMMIT;";
                         cmd = new MySqlCommand(sqlCommand, conn);
                         cmd.ExecuteNonQuery();
-                        fillTable3();
                     }
                 }
             }
             catch { }
+            fillTable3();
         }
         public void AddInvited()
         {
@@ -127,11 +137,11 @@ JOIN Educational_work_plan ON Educational_work_plan.Number_plan = `Event`.fk_Num
                 VALUES ( " + addInvitedPeople.EventsCB.SelectedValue + ", " + "LAST_INSERT_ID()); COMMIT;";
                         cmd = new MySqlCommand(sqlCommand, conn);
                         cmd.ExecuteNonQuery();
-                        fillTable4();
                     }
                 }
             }
             catch { }
+            fillTable4();
         }
         void EditInvited()
         {
@@ -165,9 +175,9 @@ JOIN Educational_work_plan ON Educational_work_plan.Number_plan = `Event`.fk_Num
                     var sqlCommand2 = $"UPDATE Inviting_participants SET fk_Number_plan = '{n1?.ToString()}' WHERE fk_Number_plan = '{idNumberPlan.ToString()}' AND fk_Code_player = '{idPlayer.ToString()}'";
                     cmd = new MySqlCommand(sqlCommand2, conn);
                     cmd.ExecuteNonQuery();
-                    fillTable4();
                 }
             }
+            fillTable4();
         }
         public void EditGroup()
         {
@@ -193,9 +203,9 @@ JOIN Educational_work_plan ON Educational_work_plan.Number_plan = `Event`.fk_Num
                     sqlCommand += "WHERE Group_code = '" + idStud.ToString() + "'";
                     cmd = new MySqlCommand(sqlCommand, conn);
                     cmd.ExecuteNonQuery();
-                    fillTable3();
                 }
             }
+            fillTable3();
         }
         void EditEvent()
         {
@@ -232,9 +242,9 @@ JOIN Educational_work_plan ON Educational_work_plan.Number_plan = `Event`.fk_Num
                     sqlCommand += " WHERE fk_Group_Code = " + idGroupCode.ToString() + " AND fk_Number_plan = " + idNumberPlan.ToString() + ";";
                     cmd = new MySqlCommand(sqlCommand, conn);
                     cmd.ExecuteNonQuery();
-                    fillTable2();
                 }
             }
+            fillTable2();
         }
         void EditVospPlan()
         {
@@ -267,9 +277,9 @@ JOIN Educational_work_plan ON Educational_work_plan.Number_plan = `Event`.fk_Num
                     sqlCommand += " WHERE Number_plan = " + idStud.ToString() + ";";
                     cmd = new MySqlCommand(sqlCommand, conn);
                     cmd.ExecuteNonQuery();
-                    fillTable();
                 }
             }
+            fillTable();
         }
         void DeleteVospPlan()
         {
@@ -348,12 +358,11 @@ JOIN Educational_work_plan ON Educational_work_plan.Number_plan = `Event`.fk_Num
                         sqlCommand = $"DELETE FROM `group` WHERE Group_code = '{idGroup.ToString()}';";
                         cmd = new(sqlCommand, conn);
                         cmd.ExecuteNonQuery();
-                        fillTable3();
-
                     }
                 }
             }
             catch { }
+            fillTable3();
         }
         void DeleteInvited()
         {
@@ -379,9 +388,9 @@ JOIN Educational_work_plan ON Educational_work_plan.Number_plan = `Event`.fk_Num
                     sqlCommand = $"DELETE FROM Invited_participants WHERE Code_player = '{idPlayer.ToString()}';";
                     cmd = new(sqlCommand, conn);
                     cmd.ExecuteNonQuery();
-                    fillTable4();
                 }
             }
+            fillTable4();
         }
         void DeleteEvent()
         {
@@ -406,12 +415,11 @@ JOIN Educational_work_plan ON Educational_work_plan.Number_plan = `Event`.fk_Num
                         sqlCommand = $"DELETE FROM `event` WHERE fk_Group_Code = '{idGroup.ToString()}' AND fk_Number_plan = '{idNumber.ToString()}';";
                         cmd = new(sqlCommand, conn);
                         cmd.ExecuteNonQuery();
-                        fillTable2();
-
                     }
                 }
             }
             catch { }
+            fillTable2();
         }
         struct tableStud
         {

@@ -40,6 +40,8 @@
             txtFIOOtvet = new TextBox();
             label5 = new Label();
             dtTashkent = new DateTimePicker();
+            checkBox1 = new CheckBox();
+            label6 = new Label();
             SuspendLayout();
             // 
             // button1
@@ -142,17 +144,37 @@
             label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
             label5.Location = new Point(12, 269);
             label5.Name = "label5";
-            label5.Size = new Size(84, 17);
+            label5.Size = new Size(145, 17);
             label5.TabIndex = 16;
-            label5.Text = "Учебный год";
+            label5.Text = "Отметка о проведении";
             // 
             // dtTashkent
             // 
             dtTashkent.CustomFormat = "";
-            dtTashkent.Location = new Point(12, 289);
+            dtTashkent.Location = new Point(126, 289);
             dtTashkent.Name = "dtTashkent";
-            dtTashkent.Size = new Size(330, 23);
+            dtTashkent.Size = new Size(216, 23);
             dtTashkent.TabIndex = 17;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(94, 296);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(15, 14);
+            checkBox1.TabIndex = 18;
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label6.Location = new Point(12, 293);
+            label6.Name = "label6";
+            label6.Size = new Size(76, 17);
+            label6.TabIndex = 19;
+            label6.Text = "Проведено";
             // 
             // ThisPlanVospitat
             // 
@@ -160,6 +182,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(354, 394);
+            Controls.Add(label6);
+            Controls.Add(checkBox1);
             Controls.Add(dtTashkent);
             Controls.Add(label5);
             Controls.Add(txtFIOOtvet);
@@ -195,5 +219,7 @@
         public TextBox txtSroki;
         public TextBox txtFIOOtvet;
         public DateTimePicker dtTashkent;
+        private Label label6;
+        public CheckBox checkBox1;
     }
 }
