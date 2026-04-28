@@ -984,10 +984,9 @@
             // 
             // spravka
             // 
-            spravka.Image = Properties.Resources.free_icon_income_statement_8870291;
             spravka.Name = "spravka";
             spravka.Size = new Size(180, 22);
-            spravka.Text = "Справка";
+            spravka.Text = "Руководство";
             // 
             // FIODayn
             // 

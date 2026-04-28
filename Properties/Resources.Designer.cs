@@ -153,6 +153,26 @@ namespace Praktika01Uvarov.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap free_icon_info_6982926 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-info-6982926", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_info_69829261 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-info-69829261", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap group_profile_users_icon_icons_com_73540__1_ {
             get {
                 object obj = ResourceManager.GetObject("group-profile-users_icon-icons.com_73540 (1)", resourceCulture);

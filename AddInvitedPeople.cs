@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace Praktika01Uvarov
 {
@@ -78,6 +79,30 @@ namespace Praktika01Uvarov
                 EventsCB.ValueMember = "Number_plan";
                 EventsCB.DisplayMember = "EVENT";
 
+            }
+        }
+
+        private void txtFIO_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Regex.IsMatch(e.KeyChar.ToString(), @"[a-zA-Z\s]") && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPost_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Regex.IsMatch(e.KeyChar.ToString(), @"[a-zA-Z\s]") && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtOrgName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Regex.IsMatch(e.KeyChar.ToString(), @"[a-zA-Z\s]") && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

@@ -113,6 +113,7 @@
             txtNaprav.PlaceholderText = "Направление воспитательной работы*";
             txtNaprav.Size = new Size(330, 23);
             txtNaprav.TabIndex = 12;
+            txtNaprav.KeyPress += txtNaprav_KeyPress;
             // 
             // txtNazvan
             // 
@@ -129,6 +130,7 @@
             txtSroki.PlaceholderText = "Сроки проведения*";
             txtSroki.Size = new Size(330, 23);
             txtSroki.TabIndex = 14;
+            txtSroki.KeyPress += txtSroki_KeyPress;
             // 
             // txtFIOOtvet
             // 
@@ -137,6 +139,7 @@
             txtFIOOtvet.PlaceholderText = "ФИО ответственного*";
             txtFIOOtvet.Size = new Size(330, 23);
             txtFIOOtvet.TabIndex = 15;
+            txtFIOOtvet.KeyPress += txtFIOOtvet_KeyPress;
             // 
             // label5
             // 

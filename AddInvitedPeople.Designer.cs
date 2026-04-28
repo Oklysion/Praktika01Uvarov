@@ -101,6 +101,7 @@
             txtFIO.PlaceholderText = "Фамилия Имя Отчество*";
             txtFIO.Size = new Size(330, 23);
             txtFIO.TabIndex = 5;
+            txtFIO.KeyPress += txtFIO_KeyPress;
             // 
             // txtPost
             // 
@@ -109,6 +110,7 @@
             txtPost.PlaceholderText = "Должность*";
             txtPost.Size = new Size(330, 23);
             txtPost.TabIndex = 6;
+            txtPost.KeyPress += txtPost_KeyPress;
             // 
             // txtOrgName
             // 
@@ -117,6 +119,7 @@
             txtOrgName.PlaceholderText = "Название организации*";
             txtOrgName.Size = new Size(330, 23);
             txtOrgName.TabIndex = 7;
+            txtOrgName.KeyPress += txtOrgName_KeyPress;
             // 
             // label4
             // 
