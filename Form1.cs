@@ -46,7 +46,7 @@ JOIN Educational_work_plan ON Educational_work_plan.Number_plan = `Event`.fk_Num
                         AddVospPlan();
                     }
                     else
-                        {
+                    {
                         if (thisPlanVospitat.checkBox1.Checked == false)
                         {
                             sqlCommand = @"START TRANSACTION; INSERT INTO Educational_work_plan (The_direction_of_educational_work, Educational_work_plan.`EVENT`, Dates_event, FIO_responsible_person)
@@ -61,10 +61,10 @@ JOIN Educational_work_plan ON Educational_work_plan.Number_plan = `Event`.fk_Num
                             cmd = new MySqlCommand(sqlCommand, conn);
                             cmd.ExecuteNonQuery();
                         }
-                      }
-                   }
+                    }
                 }
-            catch (Exception ex){ MessageBox.Show(ex.Message); } 
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
             fillTable();
         }
         public void AddEvents()
@@ -108,7 +108,7 @@ JOIN Educational_work_plan ON Educational_work_plan.Number_plan = `Event`.fk_Num
                         sqlCommand = $"SELECT COUNT(*) FROM `group` WHERE Group_Name = '{groups.txtNameGroup.Text}'";
                         cmd = new(sqlCommand, conn);
                         cmd.ExecuteNonQuery();
-                       object sc = cmd.ExecuteScalar();
+                        object sc = cmd.ExecuteScalar();
                         if (Convert.ToInt32(sc) == 1)
                         {
                             MessageBox.Show("Данная группа уже существует!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -123,8 +123,8 @@ JOIN Educational_work_plan ON Educational_work_plan.Number_plan = `Event`.fk_Num
                             }
                         }
                     }
-                    }
                 }
+            }
             catch { }
             fillTable3();
         }
@@ -1254,21 +1254,15 @@ ORDER BY t.Code_player DESC;";
 
             string curatorFIO = "Не выбран";
             string groupName = "Не выбрана";
-            string selectRabota = "Не выбрано";
+            string s = "Не выбрано";
+            string po = "Не выбрано";
 
-            if (dataGridView3.SelectedRows.Count > 0)
-            {
-                var selectedRow = dataGridView3.SelectedRows[0];
-                curatorFIO = selectedRow.Cells[1].Value?.ToString() ?? "Не указан";
-                groupName = selectedRow.Cells[2].Value?.ToString() ?? "Не указана";
-            }
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
-                var selectedRow = dataGridView1.SelectedRows[0];
-                selectRabota = selectedRow.Cells[3].Value?.ToString() ?? "Не указано";
-            }
+            curatorFIO = Report.reporting.txtCurator.Text ?? "Не указан";
+            groupName = Report.reporting.GroupCB.SelectedValue.ToString() ?? "Не указана";
+            s = Convert.ToDateTime(Report.reporting.dtS.Value).ToString("dd.MM.yyyy") ?? "Не указано";
+            po = Convert.ToDateTime(Report.reporting.dtPO.Value).ToString("dd.MM.yyyy") ?? "Не указано";
 
-            html.AppendLine($"Отчёт куратора {curatorFIO} группы {groupName} о проделанной работе с {selectRabota}");
+            html.AppendLine($"Отчёт куратора {curatorFIO} группы {groupName} о проделанной работе с {s} по {po}");
 
             html.AppendLine("<table>");
             html.AppendLine("<thead>");
@@ -1308,12 +1302,7 @@ ORDER BY t.Code_player DESC;";
 
 
             html.AppendLine("<div class=\"curator-info\">");
-            html.AppendLine(@"Дополнительная информация о проведенной воспитательной работе: При этом еженедельно
-                              проводились беседы из цикла «Разговоры о важном» по следующим темам: 1. 165-летие со дня 
-                              рождения К.Э. Циолковского; 2. День пожилых людей; 3. День учителя; 4. День отца; 5. День
-                              музыки; 6. Россия — мировой лидер атомной отрасли; 7. День народного единства; 8. Мы разные,
-                              мы вместе; 9. День матери; 10. Символы России; 11. Волонтёры России; 12. День Конституции; 13.
-                              День Героев Отечества; 14. Новый год. Семейные праздники и мечты.");
+            html.AppendLine($"{Report.reporting.txtInfo.Text}");
 
 
             html.AppendLine("<pre>Куратор___________________\t\t\t\t\t\t\tПодпись___________________</pre>");
@@ -1328,26 +1317,31 @@ ORDER BY t.Code_player DESC;";
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            try
+            fillTable2();
+            Report rep = new();
+            if (rep.ShowDialog() == DialogResult.OK)
             {
-                string htmlContent = GenerateHTMLReport();
-                saveFileDialog1.Filter = "Html Files (*.html) | *.html";
-                saveFileDialog1.ShowDialog();
-                string filePath = saveFileDialog1.FileName;
-                if (!string.IsNullOrEmpty(filePath))
+                try
                 {
-                    System.IO.File.WriteAllText(filePath, htmlContent);
-                    if (htmlContent == System.IO.File.ReadAllText(filePath))
+                    string htmlContent = GenerateHTMLReport();
+                    saveFileDialog1.Filter = "Html Files (*.html) | *.html";
+                    saveFileDialog1.ShowDialog();
+                    string filePath = saveFileDialog1.FileName;
+                    if (!string.IsNullOrEmpty(filePath))
                     {
-                        MessageBox.Show("Отчёт сохранён в " + Path.GetFileName(filePath));
+                        System.IO.File.WriteAllText(filePath, htmlContent);
+                        if (htmlContent == System.IO.File.ReadAllText(filePath))
+                        {
+                            MessageBox.Show("Отчёт сохранён в " + Path.GetFileName(filePath));
+                        }
+                    }
+                    else
+                    {
+
                     }
                 }
-                else
-                {
-
-                }
+                catch { }
             }
-            catch { }
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
