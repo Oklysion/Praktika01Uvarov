@@ -62,26 +62,23 @@ namespace Praktika01Uvarov
 
         private void txtNaprav_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Regex.IsMatch(e.KeyChar.ToString(), @"[a-zA-Z\s]") && !char.IsControl(e.KeyChar))
-            {
+            if (!Char.IsDigit(e.KeyChar)) return;
+            else
                 e.Handled = true;
-            }
         }
 
         private void txtSroki_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Regex.IsMatch(e.KeyChar.ToString(), @"[a-zA-Z\s]") && !char.IsControl(e.KeyChar))
-            {
+            if (!Char.IsDigit(e.KeyChar)) return;
+            else
                 e.Handled = true;
-            }
         }
 
         private void txtFIOOtvet_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Regex.IsMatch(e.KeyChar.ToString(), @"[a-zA-Z\s]") && !char.IsControl(e.KeyChar))
-            {
+            if (!Char.IsDigit(e.KeyChar)) return;
+            else
                 e.Handled = true;
-            }
         }
     }
 }

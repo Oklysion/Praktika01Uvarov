@@ -105,13 +105,26 @@ JOIN Educational_work_plan ON Educational_work_plan.Number_plan = `Event`.fk_Num
                     }
                     else
                     {
-                        sqlCommand = @"START TRANSACTION; INSERT INTO `group` (FIO_curator, Group_Name)
-                VALUES ('" + groups.txtFIO.Text + "', '" + groups.txtNameGroup.Text + "'); COMMIT;";
-                        cmd = new MySqlCommand(sqlCommand, conn);
+                        sqlCommand = $"SELECT COUNT(*) FROM `group` WHERE Group_Name = '{groups.txtNameGroup.Text}'";
+                        cmd = new(sqlCommand, conn);
                         cmd.ExecuteNonQuery();
+                       object sc = cmd.ExecuteScalar();
+                        if (Convert.ToInt32(sc) == 1)
+                        {
+                            MessageBox.Show("Данная группа уже существует!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else if (Convert.ToInt32(sc) == 0)
+                        {
+                            {
+                                sqlCommand = @"START TRANSACTION; INSERT INTO `group` (FIO_curator, Group_Name)
+                VALUES ('" + groups.txtFIO.Text + "', '" + groups.txtNameGroup.Text + "'); COMMIT;";
+                                cmd = new MySqlCommand(sqlCommand, conn);
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
+                    }
                     }
                 }
-            }
             catch { }
             fillTable3();
         }
@@ -194,15 +207,26 @@ JOIN Educational_work_plan ON Educational_work_plan.Number_plan = `Event`.fk_Num
                 groups.txtNameGroup.Text = n2.ToString(); ;
                 if (groups.ShowDialog() == DialogResult.OK)
                 {
-                    int indRow = dataGridView3.CurrentRow.Index;
-                    int idStud = Convert.ToInt32(dataGridView3.Rows[indRow].Cells[0].Value);
-                    string n3 = groups.txtFIO.Text;
-                    string n4 = groups.txtNameGroup.Text;
-                    sqlCommand = "UPDATE `group` SET ";
-                    sqlCommand += "FIO_curator = '" + n3 + "', Group_Name = '" + n4 + "'";
-                    sqlCommand += "WHERE Group_code = '" + idStud.ToString() + "'";
-                    cmd = new MySqlCommand(sqlCommand, conn);
+                    sqlCommand = $"SELECT COUNT(*) FROM `group` WHERE Group_Name = '{groups.txtNameGroup.Text}'";
+                    cmd = new(sqlCommand, conn);
                     cmd.ExecuteNonQuery();
+                    object sc = cmd.ExecuteScalar();
+                    if (Convert.ToInt32(sc) == 1)
+                    {
+                        MessageBox.Show("Данная группа уже существует!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (Convert.ToInt32(sc) == 0)
+                    {
+                        int indRow = dataGridView3.CurrentRow.Index;
+                        int idStud = Convert.ToInt32(dataGridView3.Rows[indRow].Cells[0].Value);
+                        string n3 = groups.txtFIO.Text;
+                        string n4 = groups.txtNameGroup.Text;
+                        sqlCommand = "UPDATE `group` SET ";
+                        sqlCommand += "FIO_curator = '" + n3 + "', Group_Name = '" + n4 + "'";
+                        sqlCommand += "WHERE Group_code = '" + idStud.ToString() + "'";
+                        cmd = new MySqlCommand(sqlCommand, conn);
+                        cmd.ExecuteNonQuery();
+                    }
                 }
             }
             fillTable3();

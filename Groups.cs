@@ -49,10 +49,14 @@ namespace Praktika01Uvarov
 
         private void txtFIO_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Regex.IsMatch(e.KeyChar.ToString(), @"[a-zA-Z\s]") && !char.IsControl(e.KeyChar))
-            {
+            if (!Char.IsDigit(e.KeyChar)) return;
+            else
                 e.Handled = true;
-            }
+        }
+
+        private void txtFIO_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

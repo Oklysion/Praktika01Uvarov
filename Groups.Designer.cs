@@ -67,6 +67,7 @@
             txtFIO.PlaceholderText = "Фамилия Имя Отчество куратора*";
             txtFIO.Size = new Size(330, 23);
             txtFIO.TabIndex = 4;
+            txtFIO.TextChanged += txtFIO_TextChanged;
             txtFIO.KeyPress += txtFIO_KeyPress;
             // 
             // label1
