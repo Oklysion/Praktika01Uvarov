@@ -64,14 +64,6 @@
             button6 = new Button();
             button3 = new Button();
             dataGridView2 = new DataGridView();
-            EventIDGroup = new DataGridViewTextBoxColumn();
-            EventIDNumber = new DataGridViewTextBoxColumn();
-            Мероприятие = new DataGridViewTextBoxColumn();
-            Группа = new DataGridViewTextBoxColumn();
-            Местопроведения = new DataGridViewTextBoxColumn();
-            Участники = new DataGridViewTextBoxColumn();
-            Содержаниемероприятия = new DataGridViewTextBoxColumn();
-            ДатапроведенияИвент = new DataGridViewTextBoxColumn();
             Group = new TabPage();
             pictureBox15 = new PictureBox();
             pictureBox12 = new PictureBox();
@@ -115,6 +107,14 @@
             toolStripSeparator3 = new ToolStripSeparator();
             DateTS = new ToolStripLabel();
             saveFileDialog1 = new SaveFileDialog();
+            EventIDGroup = new DataGridViewTextBoxColumn();
+            EventIDNumber = new DataGridViewTextBoxColumn();
+            Мероприятие = new DataGridViewTextBoxColumn();
+            Группа = new DataGridViewTextBoxColumn();
+            Местопроведения = new DataGridViewTextBoxColumn();
+            Участники = new DataGridViewTextBoxColumn();
+            Содержаниемероприятия = new DataGridViewTextBoxColumn();
+            ДатапроведенияИвент = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             AddEditDelete.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -537,62 +537,6 @@
             dataGridView2.TabIndex = 2;
             dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
-            // EventIDGroup
-            // 
-            EventIDGroup.HeaderText = "EventIDGroup";
-            EventIDGroup.Name = "EventIDGroup";
-            EventIDGroup.ReadOnly = true;
-            EventIDGroup.Visible = false;
-            // 
-            // EventIDNumber
-            // 
-            EventIDNumber.HeaderText = "EventIDNumber";
-            EventIDNumber.Name = "EventIDNumber";
-            EventIDNumber.ReadOnly = true;
-            EventIDNumber.Visible = false;
-            // 
-            // Мероприятие
-            // 
-            Мероприятие.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Мероприятие.HeaderText = "Мероприятие";
-            Мероприятие.Name = "Мероприятие";
-            Мероприятие.ReadOnly = true;
-            // 
-            // Группа
-            // 
-            Группа.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Группа.HeaderText = "Группа";
-            Группа.Name = "Группа";
-            Группа.ReadOnly = true;
-            // 
-            // Местопроведения
-            // 
-            Местопроведения.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Местопроведения.HeaderText = "Место проведения";
-            Местопроведения.Name = "Местопроведения";
-            Местопроведения.ReadOnly = true;
-            // 
-            // Участники
-            // 
-            Участники.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Участники.HeaderText = "Участники";
-            Участники.Name = "Участники";
-            Участники.ReadOnly = true;
-            // 
-            // Содержаниемероприятия
-            // 
-            Содержаниемероприятия.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Содержаниемероприятия.HeaderText = "Содержание мероприятия";
-            Содержаниемероприятия.Name = "Содержаниемероприятия";
-            Содержаниемероприятия.ReadOnly = true;
-            // 
-            // ДатапроведенияИвент
-            // 
-            ДатапроведенияИвент.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ДатапроведенияИвент.HeaderText = "Дата проведения";
-            ДатапроведенияИвент.Name = "ДатапроведенияИвент";
-            ДатапроведенияИвент.ReadOnly = true;
-            // 
             // Group
             // 
             Group.Controls.Add(pictureBox15);
@@ -978,14 +922,14 @@
             // 
             spravochnik.Image = Properties.Resources.free_icon_book_11553448;
             spravochnik.Name = "spravochnik";
-            spravochnik.Size = new Size(180, 22);
+            spravochnik.Size = new Size(151, 22);
             spravochnik.Text = "Справочник";
             spravochnik.Click += toolStripMenuItem2_Click;
             // 
             // spravka
             // 
             spravka.Name = "spravka";
-            spravka.Size = new Size(180, 22);
+            spravka.Size = new Size(151, 22);
             spravka.Text = "Руководство";
             // 
             // FIODayn
@@ -1029,6 +973,62 @@
             DateTS.Name = "DateTS";
             DateTS.RightToLeft = RightToLeft.No;
             DateTS.Size = new Size(0, 22);
+            // 
+            // EventIDGroup
+            // 
+            EventIDGroup.HeaderText = "EventIDGroup";
+            EventIDGroup.Name = "EventIDGroup";
+            EventIDGroup.ReadOnly = true;
+            EventIDGroup.Visible = false;
+            // 
+            // EventIDNumber
+            // 
+            EventIDNumber.HeaderText = "EventIDNumber";
+            EventIDNumber.Name = "EventIDNumber";
+            EventIDNumber.ReadOnly = true;
+            EventIDNumber.Visible = false;
+            // 
+            // Мероприятие
+            // 
+            Мероприятие.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Мероприятие.HeaderText = "Мероприятие";
+            Мероприятие.Name = "Мероприятие";
+            Мероприятие.ReadOnly = true;
+            // 
+            // Группа
+            // 
+            Группа.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Группа.HeaderText = "Группа";
+            Группа.Name = "Группа";
+            Группа.ReadOnly = true;
+            // 
+            // Местопроведения
+            // 
+            Местопроведения.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Местопроведения.HeaderText = "Место проведения";
+            Местопроведения.Name = "Местопроведения";
+            Местопроведения.ReadOnly = true;
+            // 
+            // Участники
+            // 
+            Участники.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Участники.HeaderText = "Участники";
+            Участники.Name = "Участники";
+            Участники.ReadOnly = true;
+            // 
+            // Содержаниемероприятия
+            // 
+            Содержаниемероприятия.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Содержаниемероприятия.HeaderText = "Содержание мероприятия";
+            Содержаниемероприятия.Name = "Содержаниемероприятия";
+            Содержаниемероприятия.ReadOnly = true;
+            // 
+            // ДатапроведенияИвент
+            // 
+            ДатапроведенияИвент.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ДатапроведенияИвент.HeaderText = "Дата проведения";
+            ДатапроведенияИвент.Name = "ДатапроведенияИвент";
+            ДатапроведенияИвент.ReadOnly = true;
             // 
             // Form1
             // 
@@ -1142,14 +1142,6 @@
         private DataGridViewTextBoxColumn ФИОПриглашённого;
         private DataGridViewTextBoxColumn Должность;
         private DataGridViewTextBoxColumn Названиеорганизации;
-        private DataGridViewTextBoxColumn EventIDGroup;
-        private DataGridViewTextBoxColumn EventIDNumber;
-        private DataGridViewTextBoxColumn Мероприятие;
-        private DataGridViewTextBoxColumn Группа;
-        private DataGridViewTextBoxColumn Местопроведения;
-        private DataGridViewTextBoxColumn Участники;
-        private DataGridViewTextBoxColumn Содержаниемероприятия;
-        private DataGridViewTextBoxColumn ДатапроведенияИвент;
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripMenuItem contextFilterItem;
         private ToolStrip toolStrip1;
@@ -1169,5 +1161,13 @@
         private DataGridViewTextBoxColumn Учебныйгод;
         private ToolStripMenuItem spravochnik;
         private ToolStripMenuItem spravka;
+        private DataGridViewTextBoxColumn EventIDGroup;
+        private DataGridViewTextBoxColumn EventIDNumber;
+        private DataGridViewTextBoxColumn Мероприятие;
+        private DataGridViewTextBoxColumn Группа;
+        private DataGridViewTextBoxColumn Местопроведения;
+        private DataGridViewTextBoxColumn Участники;
+        private DataGridViewTextBoxColumn Содержаниемероприятия;
+        private DataGridViewTextBoxColumn ДатапроведенияИвент;
     }
 }

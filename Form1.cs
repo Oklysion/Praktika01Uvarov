@@ -6,9 +6,9 @@ namespace Praktika01Uvarov
 {
     public partial class Form1 : Form
     {
-        MySqlConnection conn;
-        MySqlCommand cmd;
-        MySqlDataReader rdr;
+        public MySqlConnection conn;
+        public MySqlCommand cmd;
+        public MySqlDataReader rdr;
         public string sqlCommand;
 
         public static Form1 Instance;

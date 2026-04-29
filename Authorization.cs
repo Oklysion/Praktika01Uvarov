@@ -91,7 +91,8 @@ Password=";
                         {
                             DialogResult r2 = MessageBox.Show
                                 (
-                                "Вы действительно хотите создать заполненную базу данных?",
+                                "Вы действительно хотите создать заполненную базу данных?" + Environment.NewLine +
+                                "ДА - создаст заполненную базу данных. НЕТ - закроет приложение",
                                 "Выбор действий",
                                 MessageBoxButtons.YesNo,
                                 MessageBoxIcon.Warning
@@ -102,7 +103,7 @@ Password=";
                             }
                             if (r2 == DialogResult.No)
                             {
-                                return;
+                                Environment.Exit(0);
                             }
                         }
 
@@ -110,7 +111,8 @@ Password=";
                         {
                             DialogResult r3 = MessageBox.Show
                                 (
-                                "Вы действительно хотите создать пустую базу данных?",
+                                "Вы действительно хотите создать пустую базу данных? " + Environment.NewLine +
+                                "ДА - создаст пустую базу данных. НЕТ - закроет приложение",
                                 "Выбор действий",
                                 MessageBoxButtons.YesNo,
                                 MessageBoxIcon.Warning
@@ -121,7 +123,7 @@ Password=";
                             }
                             if (r3 == DialogResult.No)
                             {
-                                return;
+                                Environment.Exit(0);
                             }
                         }
 

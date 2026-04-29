@@ -187,7 +187,7 @@
             btnReserv.Name = "btnReserv";
             btnReserv.Size = new Size(113, 76);
             btnReserv.TabIndex = 11;
-            btnReserv.Text = "Резервоне копирование";
+            btnReserv.Text = "Резервное копирование";
             btnReserv.UseVisualStyleBackColor = true;
             btnReserv.Click += button3_Click;
             // 
@@ -206,6 +206,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(598, 337);
             Controls.Add(btnVostan);
             Controls.Add(btnReserv);
