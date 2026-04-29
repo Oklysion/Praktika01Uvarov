@@ -1,6 +1,7 @@
 using ArchiveFund;
 using MySql.Data.MySqlClient;
 using System.Text;
+using System.Windows.Forms;
 
 namespace Praktika01Uvarov
 {
@@ -1064,6 +1065,7 @@ ORDER BY E.Number_plan DESC;
             while (rdr.Read())
             {
                 int row = dataGridView1.Rows.Add();
+                dataGridView1.Rows[row].Cells[0].Value = rdr["Number_plan"].ToString();
                 dataGridView1.Rows[row].Cells[1].Value = rdr["Направление_образовательной_работы"].ToString();
                 dataGridView1.Rows[row].Cells[2].Value = rdr["Мероприятие"].ToString();
                 dataGridView1.Rows[row].Cells[3].Value = rdr["Дата_мероприятия"].ToString();
