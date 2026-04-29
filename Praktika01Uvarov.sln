@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Praktika01Uvarov", "Praktik
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTest", "..\XUnitTest\XUnitTest.csproj", "{E266FF27-9589-4FDC-B73E-7ECDCE4CBA11}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Praktika AND Xunit", "Praktika AND Xunit", "{18903F6B-5877-466E-88D1-5DC555938402}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{92EEAA0A-645F-4212-8144-D6741763F84A} = {18903F6B-5877-466E-88D1-5DC555938402}
+		{E266FF27-9589-4FDC-B73E-7ECDCE4CBA11} = {18903F6B-5877-466E-88D1-5DC555938402}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {988A4CA2-5536-42A1-BD4E-A219C71537E8}
