@@ -143,6 +143,16 @@ namespace Praktika01Uvarov.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap free_icon_hide_2767146 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-hide-2767146", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap free_icon_income_statement_8870291 {
             get {
                 object obj = ResourceManager.GetObject("free-icon-income-statement-8870291", resourceCulture);
@@ -166,6 +176,36 @@ namespace Praktika01Uvarov.Properties {
         internal static System.Drawing.Bitmap free_icon_info_69829261 {
             get {
                 object obj = ResourceManager.GetObject("free-icon-info-69829261", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_question_1828934 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-question-1828934", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_smart_key_4230147 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-smart-key-4230147", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_user_17807725 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-user-17807725", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -206,6 +246,16 @@ namespace Praktika01Uvarov.Properties {
         internal static System.Drawing.Bitmap question_sign_icon_178767 {
             get {
                 object obj = ResourceManager.GetObject("question_sign_icon_178767", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap question_sign_icon_1787671 {
+            get {
+                object obj = ResourceManager.GetObject("question_sign_icon_1787671", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

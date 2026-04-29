@@ -237,13 +237,13 @@ Password=";
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            pictureBox3.Image = Image.FromFile("ShowOKO.jpg");
+            pictureBox3.Image = Image.FromFile("free-icon-eye-158746.png");
             txtPass.PasswordChar = '\0';
         }
 
         private void pictureBox3_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox3.Image = Image.FromFile("ZakritoOKO.jpg");
+            pictureBox3.Image = Image.FromFile("free-icon-hide-2767146.png");
             txtPass.PasswordChar = '*';
         }
     }

@@ -59,7 +59,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Image = Properties.Resources.free_icon_user_17807725;
             pictureBox1.Location = new Point(12, 27);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(24, 24);
@@ -69,7 +69,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Image = Properties.Resources.free_icon_smart_key_4230147;
             pictureBox2.Location = new Point(12, 74);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(24, 24);
@@ -92,7 +92,7 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = Properties.Resources.ZakritoOKO1;
+            pictureBox3.Image = Properties.Resources.free_icon_hide_2767146;
             pictureBox3.Location = new Point(276, 74);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(31, 24);
