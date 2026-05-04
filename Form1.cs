@@ -1362,7 +1362,7 @@ ORDER BY t.Code_player DESC;";
             {
                 System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
                 {
-                    FileName = @"C:\Users\IP2023\Desktop\УП01-3курс\Praktika01Uvarov\bin\Debug\net8.0-windows\help.chm",
+                    FileName = @"C:\Users\IP2023\Desktop\УП01-3курс\Praktika01Uvarov\Resources\help.chm",
                     UseShellExecute = true
                 });
             }
