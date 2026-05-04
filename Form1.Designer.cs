@@ -108,7 +108,6 @@
             администрированиеToolStripMenuItem = new ToolStripMenuItem();
             оПрограммеToolStripMenuItem = new ToolStripMenuItem();
             spravochnik = new ToolStripMenuItem();
-            spravka = new ToolStripMenuItem();
             FIODayn = new Label();
             toolStrip1 = new ToolStrip();
             fullNameUSER = new ToolStripLabel();
@@ -967,7 +966,7 @@
             // 
             // оПрограммеToolStripMenuItem
             // 
-            оПрограммеToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { spravochnik, spravka });
+            оПрограммеToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { spravochnik });
             оПрограммеToolStripMenuItem.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
             оПрограммеToolStripMenuItem.Image = Properties.Resources.question_sign_icon_1787671;
             оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
@@ -981,12 +980,6 @@
             spravochnik.Size = new Size(180, 22);
             spravochnik.Text = "Справочник";
             spravochnik.Click += toolStripMenuItem2_Click;
-            // 
-            // spravka
-            // 
-            spravka.Name = "spravka";
-            spravka.Size = new Size(180, 22);
-            spravka.Text = "Руководство";
             // 
             // FIODayn
             // 
@@ -1160,7 +1153,6 @@
         private DataGridViewTextBoxColumn Ответственный;
         private DataGridViewTextBoxColumn Учебныйгод;
         private ToolStripMenuItem spravochnik;
-        private ToolStripMenuItem spravka;
         private DataGridViewTextBoxColumn EventIDGroup;
         private DataGridViewTextBoxColumn EventIDNumber;
         private DataGridViewTextBoxColumn Мероприятие;

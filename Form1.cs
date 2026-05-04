@@ -1358,6 +1358,18 @@ ORDER BY t.Code_player DESC;";
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
+            try
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = @"C:\Users\IP2023\Desktop\УП01-3курс\Praktika01Uvarov\bin\Debug\net8.0-windows\help.chm",
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.Message);
+            }
 
         }
     }
